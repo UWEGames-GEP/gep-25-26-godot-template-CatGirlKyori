@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd022scj5p7d6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_c0eus"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4v4m4"]
+radius = 0.45
+height = 0.9
+
+[node name="Node3D" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_c0eus")
+debug_color = Color(0.12784, 0.520763, 1, 0.42)
+debug_fill = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_4v4m4")
