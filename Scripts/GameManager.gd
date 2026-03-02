@@ -21,6 +21,10 @@ func toggle_pause() -> void:
 	if current_state is PlayState:
 		change_state(PauseState.new(self))
 		print("toggle pause")
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE 
+		get_node("Level/Inventory").visible =true
 	elif current_state is PauseState:
 		change_state(PlayState.new(self))
 		print("toggle play")
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+		get_node("Level/Inventory").visible =false

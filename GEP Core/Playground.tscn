@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ngecyo0pmaed"]
+[gd_scene load_steps=13 format=3 uid="uid://ngecyo0pmaed"]
 
 [ext_resource type="Sky" uid="uid://cbbdl23q60wak" path="res://addons/ThirdPersonTemplate/Environments/SkyBox.res" id="1_rfwro"]
 [ext_resource type="Material" uid="uid://c1u020xb37y6n" path="res://addons/ThirdPersonTemplate/Environments/Materials/Blue.material" id="2_wyl2q"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c75s2m6eic1vo" path="res://addons/ThirdPersonTemplate/Character/Nodes/PlayerTemplate.tscn" id="8_0iswe"]
 [ext_resource type="PackedScene" uid="uid://bd022scj5p7d6" path="res://orb thing.tscn" id="9_dtxi8"]
 [ext_resource type="Script" uid="uid://c63y7kopumsqs" path="res://Scripts/GameManager.gd" id="9_wyl2q"]
+[ext_resource type="PackedScene" uid="uid://dmjdfhpdklfq6" path="res://Inventory.tscn" id="10_iywyu"]
 
 [sub_resource type="Environment" id="Environment_qyvd4"]
 background_mode = 2
@@ -125,6 +126,13 @@ material = ExtResource("7_x40f1")
 
 [node name="Node3D2" parent="GameManager/Level" instance=ExtResource("9_dtxi8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.918423, 1, -17.1636)
+
+[node name="Inventory" parent="GameManager/Level" instance=ExtResource("10_iywyu")]
+visible = false
+offset_left = 385.5
+offset_top = 49.0
+offset_right = 385.5
+offset_bottom = 49.0
 
 [node name="PlayerTemplate" parent="GameManager" instance=ExtResource("8_0iswe")]
 process_mode = 1
