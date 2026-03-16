@@ -24,7 +24,6 @@ adjustment_enabled = true
 adjustment_saturation = 1.15
 
 [node name="Scene" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0815773, -1.43051e-06, 0.163605)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.892271, -0.274443, 0.358516, 2.02684e-08, 0.794054, 0.607847, -0.451501, 0.542364, -0.708511, 0, 2.76815, 9.26053)
@@ -126,7 +125,7 @@ operation = 2
 size = Vector3(22, 10, 14)
 material = ExtResource("7_x40f1")
 
-[node name="Node3D2" parent="GameManager/Level" instance=ExtResource("9_dtxi8")]
+[node name="SphereObject" parent="GameManager/Level" instance=ExtResource("9_dtxi8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.918423, 1, -17.1636)
 script = ExtResource("10_vn1us")
 
