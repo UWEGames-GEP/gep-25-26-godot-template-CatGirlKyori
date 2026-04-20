@@ -124,8 +124,10 @@ operation = 2
 size = Vector3(22, 10, 14)
 material = ExtResource("7_x40f1")
 
-[node name="SphereObject" parent="GameManager/Level" instance=ExtResource("9_dtxi8")]
+[node name="SphereObject" parent="GameManager/Level" node_paths=PackedStringArray("InventoryManager") instance=ExtResource("9_dtxi8")]
 transform = Transform3D(1, 0.000106512, -0.000161139, -0.000106442, 1, 0.000467846, 0.000161186, -0.00046783, 1, -0.918423, 1, -17.1636)
+item_name = "Orb"
+InventoryManager = NodePath("../../PlayerTemplate/InventoryManager")
 
 [node name="Inventory" parent="GameManager/Level" instance=ExtResource("10_iywyu")]
 visible = false
@@ -138,5 +140,6 @@ offset_bottom = 49.0
 process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0815773, -1.43051e-06, -19.6763)
 
-[node name="Inventory Script" type="Node" parent="."]
+[node name="InventoryManager" type="Node3D" parent="GameManager/PlayerTemplate"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0815773, 1.43051e-06, 19.6763)
 script = ExtResource("12_sc53d")

@@ -8,10 +8,13 @@
 radius = 0.45
 height = 0.9
 
-[node name="Area3D" type="Area3D"]
+[node name="Area3D" type="Area3D" node_paths=PackedStringArray("item_area3d", "item_node")]
 script = ExtResource("1_4v4m4")
+item_area3d = NodePath(".")
+item_node = NodePath(".")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000165224, 0, 0)
 shape = SubResource("SphereShape3D_c0eus")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
