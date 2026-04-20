@@ -4,7 +4,7 @@ class_name ItemObject
 @export var item_area3d: Area3D
 @export var item_node: Area3D
 @export var item_name: String = ""
-@export var InventoryManager: Inventory
+@export var InventoryManager: Node3D
 
 
 func _ready() -> void:
@@ -20,11 +20,10 @@ func _process(delta: float) -> void:
 		
 
 func drop_item_at(index: int) -> void:
-	var inventory = get_tree().get_first_node_in_group("player").get_node("InventoryManager")
+	var InventoryManager = get_tree().get_first_node_in_group("player").get_node("InventoryManager")
 	
 	
 
-func set_inventory_manager(inv: Inventory) -> void:
-	InventoryManager = inv
+
 
  
