@@ -129,17 +129,17 @@ transform = Transform3D(1, 0.000106512, -0.000161139, -0.000106442, 1, 0.0004678
 item_name = "Orb"
 InventoryManager = NodePath("../../PlayerTemplate/InventoryManager")
 
-[node name="Inventory" parent="GameManager/Level" instance=ExtResource("10_iywyu")]
+[node name="Inventory" parent="GameManager/Level" node_paths=PackedStringArray("InventoryManager") instance=ExtResource("10_iywyu")]
 visible = false
 offset_left = 385.5
 offset_top = 49.0
 offset_right = 385.5
 offset_bottom = 49.0
+InventoryManager = NodePath("../../PlayerTemplate/InventoryManager")
 
 [node name="PlayerTemplate" parent="GameManager" groups=["Player"] instance=ExtResource("8_0iswe")]
 process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0815773, -1.43051e-06, -19.6763)
 
 [node name="InventoryManager" type="Node3D" parent="GameManager/PlayerTemplate"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0815773, 1.43051e-06, 19.6763)
 script = ExtResource("12_sc53d")

@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dmjdfhpdklfq6"]
+[gd_scene load_steps=2 format=3 uid="uid://dmjdfhpdklfq6"]
+
+[ext_resource type="Script" uid="uid://bwo28gekmviqb" path="res://Scripts/inventoryui.gd" id="1_3n7vm"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -9,6 +11,7 @@ offset_left = -2.0
 offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3n7vm")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 1
@@ -25,7 +28,8 @@ theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
 theme_override_font_sizes/font_size = 50
 text = "Inventory"
 
-[node name="Button" type="Button" parent="."]
+[node name="orb_button" type="Button" parent="."]
+process_mode = 3
 layout_mode = 1
 anchors_preset = -1
 offset_left = 377.0
@@ -33,4 +37,7 @@ offset_top = 263.0
 offset_right = 747.0
 offset_bottom = 344.0
 theme_override_font_sizes/font_size = 36
+action_mode = 0
 text = "Orb"
+
+[connection signal="pressed" from="orb_button" to="." method="_on_orb_button_pressed"]
