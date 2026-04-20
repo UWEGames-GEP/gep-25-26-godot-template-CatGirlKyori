@@ -4,4 +4,4 @@ class_name inventoryui
 
 func _on_orb_button_pressed() -> void:
 	print("Button Pressed")
-	InventoryManager.drop_item_at()
+	InventoryManager.drop_item_at(0)

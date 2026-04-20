@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c75s2m6eic1vo" path="res://addons/ThirdPersonTemplate/Character/Nodes/PlayerTemplate.tscn" id="8_0iswe"]
 [ext_resource type="PackedScene" uid="uid://bd022scj5p7d6" path="res://orb thing.tscn" id="9_dtxi8"]
 [ext_resource type="Script" uid="uid://c63y7kopumsqs" path="res://Scripts/GameManager.gd" id="9_wyl2q"]
-[ext_resource type="PackedScene" uid="uid://dmjdfhpdklfq6" path="res://Inventory.tscn" id="10_iywyu"]
+[ext_resource type="Script" uid="uid://bwo28gekmviqb" path="res://Scripts/inventoryui.gd" id="10_sc53d"]
 [ext_resource type="Script" uid="uid://de08sapm24qxj" path="res://Scripts/Inventory.gd" id="12_sc53d"]
 
 [sub_resource type="Environment" id="Environment_qyvd4"]
@@ -129,13 +129,31 @@ transform = Transform3D(1, 0.000106512, -0.000161139, -0.000106442, 1, 0.0004678
 item_name = "Orb"
 InventoryManager = NodePath("../../PlayerTemplate/InventoryManager")
 
-[node name="Inventory" parent="GameManager/Level" node_paths=PackedStringArray("InventoryManager") instance=ExtResource("10_iywyu")]
-visible = false
-offset_left = 385.5
-offset_top = 49.0
-offset_right = 385.5
-offset_bottom = 49.0
+[node name="TextEdit" type="TextEdit" parent="GameManager/Level" node_paths=PackedStringArray("InventoryManager")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.0
+offset_top = 80.0
+offset_right = 126.0
+offset_bottom = 173.0
+grow_horizontal = 2
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 50
+text = "Inventory"
+script = ExtResource("10_sc53d")
 InventoryManager = NodePath("../../PlayerTemplate/InventoryManager")
+
+[node name="orb_button" type="Button" parent="GameManager/Level"]
+process_mode = 3
+offset_left = 781.0
+offset_top = 538.0
+offset_right = 1151.0
+offset_bottom = 619.0
+theme_override_font_sizes/font_size = 36
+action_mode = 0
+text = "Orb"
 
 [node name="PlayerTemplate" parent="GameManager" groups=["Player"] instance=ExtResource("8_0iswe")]
 process_mode = 1
@@ -143,3 +161,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0815773, -1.43051e-06, -19
 
 [node name="InventoryManager" type="Node3D" parent="GameManager/PlayerTemplate"]
 script = ExtResource("12_sc53d")
+
+[connection signal="pressed" from="GameManager/Level/orb_button" to="GameManager/Level/TextEdit" method="_on_orb_button_pressed"]
